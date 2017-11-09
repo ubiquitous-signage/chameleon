@@ -1,0 +1,18 @@
+// tsconfig.json
+{
+	"compilerOptions": {
+		"module": "es2015",
+		"target": "es5",
+		"sourceMap": true,
+		// import App from './App' とかするため（？）
+		"allowSyntheticDefaultImports": true,
+		"moduleResolution": "node",
+		"noImplicitThis": true
+	},
+	"include": [
+		"./src/**/*.ts"
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
