@@ -15,16 +15,38 @@
 </template>
 
 <script>
+import moment from 'moment'
+let nowDate = moment()
+let dateFormat = 'YYYY/MM/DD'
+let timeFormat = 'HH:mm:ss'
+
 export default {
   name: 'HeaderComponent',
   data () {
     return {
       title: 'ダイワユビキタス学術研究館 3階',
-      date: '0000/00/00',
-      time: '00:00'
+      date: nowDate.format(dateFormat),
+      time: nowDate.format(timeFormat)
     }
+  },
+  methods: {
+    refreshDate: function () {
+      nowDate = moment()
+      this.date = nowDate.format(dateFormat)
+      this.time = nowDate.format(timeFormat)
+    }
+  },
+  created: function () {
+    this.refreshDate()
+
+    setInterval(function () {
+      this.refreshDate()
+    }.bind(this), 1000)
   }
 }
+// setInterval(()=>{
+//   now_date = moment()
+// }, 1000)
 </script>
 
 <!-- Add "scoped" atribute to limit CSS to this component only -->
