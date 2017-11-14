@@ -2,26 +2,43 @@
   <div class="general">
     <ul class="generalList">
       <li class="internal">
-        <internal-component/>
+        <info-component v-bind:items="internalItems" />
       </li>
       <li class="external">
         <!-- <external-component/> -->
-        <internal-component/>
+        <info-component v-bind:items="externalItems" />
       </li>
       <li class="social">
         <!-- <social-component/> -->
-        <internal-component/>
+        <social-component v-bind:items="socialItems" />
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import InternalComponent from './InternalComponent'
+import lecturesDummy from '../../lectures_dummy.json'
+import InfoComponent from './InfoComponent'
 export default {
   name: 'General',
+  data () {
+    return {
+      items: [lecturesDummy, lecturesDummy]
+    }
+  },
   components: {
-    'internal-component': InternalComponent
+    'info-component': InfoComponent
+  },
+  computed: {
+    internalItems: function () {
+      return this.items.filter((item) => { return item.category === 'internal' })
+    },
+    externalItems: function () {
+      return this.items.filter((item) => { return item.category === 'external' })
+    },
+    socialItems: function () {
+      return this.items.filter((item) => { return item.category === 'social' })
+    }
   }
 }
 </script>
