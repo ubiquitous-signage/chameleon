@@ -19,11 +19,25 @@
 <script>
 import lecturesDummy from '../../lectures_dummy.json'
 import InfoComponent from './InfoComponent'
+import axios from 'axios'
+
 export default {
   name: 'General',
   data () {
     return {
-      items: [lecturesDummy, lecturesDummy]
+      items: []
+    };
+  },
+  async created () {
+    try {
+      let res = await axios.get('http://localhost:9000/lectures')
+      this.items.push(res.data)
+      console.log('response data');
+      console.log(res.data);
+      console.log('items data');
+      console.log(this.items);
+    } catch (e) {
+      console.log(e);
     }
   },
   components: {
