@@ -5,10 +5,12 @@
         <internal-component/>
       </li>
       <li class="external">
-        <external-component/>
+        <!-- <external-component/> -->
+        <internal-component/>
       </li>
       <li class="social">
-        <social-component/>
+        <!-- <social-component/> -->
+        <internal-component/>
       </li>
     </ul>
   </div>
