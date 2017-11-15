@@ -30,7 +30,7 @@ export default {
   },
   async created () {
     try {
-      let res = await axios.get('http://localhost:9000/lectures')
+      let res = await axios.get('http://localhost:9000/api/lectures')
       this.items.push(res.data)
       console.log('response data')
       console.log(res.data)

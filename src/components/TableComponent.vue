@@ -3,7 +3,7 @@
     <table class="content">
       <tbody>
         <tr v-for="content in formattedContents" v-bind:key="content.to_string">
-          <td v-for="message in content" v-bind:key="message['payload']">
+          <td v-for="message in content" v-bind:key="message.to_string">
             <div v-if="message['type'] === 'String'">
               {{ message['payload'] }}
             </div>
