@@ -46,9 +46,9 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .table {
-  background-color: #FFF;
+  // background-color: #FFF;
   font-size: 3rem;
-  border: 0;
+  padding: 0.8%;
 }
 .content {
   text-align: left;

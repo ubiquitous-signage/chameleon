@@ -24,14 +24,18 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .panel {
-  margin: 0 0 1% 0;
+  margin: 0 0 1vw 0;
   padding: 0;
-  background-color: #FA0;
+  border: 0.1rem solid #2c3e50;
+  border-radius: 1rem;
 }
 .panelHeader {
   font-size: 3.6rem;
   vertical-align: middle;
   margin: 0;
   padding: 0;
+  border-bottom: 1pt solid #2c3e50;
+  border-radius: 0.93rem 0.93rem 0 0;
+  background-color: #FC0;
 }
 </style>

@@ -77,14 +77,14 @@ export default {
   border: 0;
   display: table;
   width: 100%;
-  background: #FF0;
+  // background: #FF0;
   border-spacing: 1vw 0;
   border-collapse: separate;
   table-layout: auto
 }
 @mixin generalItem {
   font-weight: bold;
-  background: #0bd;
+  // background: #0bd;
   display: table-cell;
   text-align: center;
   vertical-align: top;

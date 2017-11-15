@@ -21,7 +21,7 @@ export default {
 
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-div {
-  background-color: #F0F
+.info {
+  // background-color: #F0F
 }
 </style>

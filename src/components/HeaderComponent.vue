@@ -52,7 +52,7 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 h1 {
-  font-size: 4.8rem;
+  font-size: 5.5rem;
   margin: 0;
   padding: 0;
 }
@@ -62,24 +62,26 @@ h1 {
   border: 0;
   display: table;
   width: 100%;
-  background: #FF0;
+  // background: #FF0;
+  background: #2c3e50;
+  color: #FFF;
   border-spacing: 1vw 0;
   border-collapse: separate;
   table-layout: auto
 }
 @mixin headerItem {
   font-weight: bold;
-  background: #0CC;
+  // background: #0CC;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  padding: 3.5vh 3vw;
+  padding: 1vh 3vw;
 }
 .clock {
   @include headerItem;
   width: 20%;
   .date {
-    font-size: 2.0rem;
+    font-size: 3.0rem;
   }
   .time {
     font-size: 4.0rem;
