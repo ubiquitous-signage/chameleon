@@ -47,7 +47,7 @@ export default {
     let resources = ['/lectures', '/newsletters', '/portal', '/schedules', '/trains', '/weather']
     resources.forEach((resource) => {
       this.fetchApi(API_ENDPOINT + resource)
-    })    
+    })
   },
   components: {
     'info-component': InfoComponent
@@ -87,14 +87,16 @@ export default {
   background: #0bd;
   display: table-cell;
   text-align: center;
-  vertical-align: middle;
+  vertical-align: top;
   padding: 0;
 }
 .internal {
   @include generalItem;
+  width: 40vw
 }
 .external {
   @include generalItem;
+  width: 40vw
 }
 .social {
   @include generalItem;

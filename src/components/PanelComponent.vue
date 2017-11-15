@@ -29,7 +29,7 @@ export default {
   background-color: #FA0;
 }
 .panelHeader {
-  font-size: 1.6em;
+  font-size: 3.6rem;
   vertical-align: middle;
   margin: 0;
   padding: 0;  

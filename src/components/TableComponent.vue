@@ -8,8 +8,7 @@
               {{ message['payload'] }}
             </div>
             <div v-if="message['type'] === 'Image'">
-              {{ message['payload'] }} 
-              <!-- スタブ -->
+              <img v-bind:src="HAMSTER + message['payload']" />
             </div>
           </td>
         </tr>
@@ -21,6 +20,11 @@
 <script>
 export default {
   name: 'TableComponent',
+  data () {
+    return {
+      HAMSTER: 'http://localhost:9000'
+    }
+  },
   props: {
     contents: {
       default: [[]]
@@ -41,7 +45,12 @@ export default {
 
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-div {
-  background-color: #af0;
+.table {
+  background-color: #FFF;
+  font-size: 3rem;
+  vertical-align: middle
+}
+img {
+  height: 1.0em;
 }
 </style>
