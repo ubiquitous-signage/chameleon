@@ -3,7 +3,7 @@
     <div class="panelHeader">
       {{ this.title }}
     </div>
-    <table-component v-if="this.type=='table'" v-bind:contents="this.contents" />
+    <table-component v-if="this.type=='table'" v-bind:contents="this.contents" />
     <template v-else>
       [ERROR] Undifined Panel Type!
     </template>
