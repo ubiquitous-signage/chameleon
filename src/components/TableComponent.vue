@@ -48,9 +48,13 @@ export default {
 .table {
   background-color: #FFF;
   font-size: 3rem;
-  vertical-align: middle
+  border: 0;
+}
+.content {
+  text-align: left;
 }
 img {
-  height: 1.0em;
+  height: 1.5em;
+  vertical-align: middle;
 }
 </style>
