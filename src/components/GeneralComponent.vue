@@ -21,6 +21,7 @@
 import InfoComponent from './InfoComponent'
 import axios from 'axios'
 
+const API_ENDPOINT = 'http://localhost:9000/api'
 export default {
   name: 'General',
   data () {
@@ -28,17 +29,25 @@ export default {
       items: []
     }
   },
-  async created () {
-    try {
-      let res = await axios.get('http://localhost:9000/api/lectures')
-      this.items.push(res.data)
-      console.log('response data')
-      console.log(res.data)
-      console.log('items data')
-      console.log(this.items)
-    } catch (e) {
-      console.log(e)
+  methods: {
+    fetchApi: async function (uri) {
+      try {
+        let res = await axios.get(uri)
+        this.items.push(res.data)
+        console.log('response data')
+        console.log(res.data)
+        console.log('items data')
+        console.log(this.items)
+      } catch (e) {
+        console.log(e)
+      }
     }
+  },
+  created () {
+    let resources = ['/lectures', '/newsletters', '/portal', '/schedules', '/trains', '/weather']
+    resources.forEach((resource) => {
+      this.fetchApi(API_ENDPOINT + resource)
+    })    
   },
   components: {
     'info-component': InfoComponent
