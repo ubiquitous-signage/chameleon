@@ -14,8 +14,6 @@
 import TableComponent from './TableComponent'
 export default {
   name: 'PanelComponent',
-  data () {
-  },
   props: ['version', 'type', 'title', 'contents'],
   components: {
     'table-component': TableComponent
@@ -25,7 +23,15 @@ export default {
 
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-div {
-  background-color: #FA0
+.panel {
+  margin: 0;
+  padding: 0;
+  background-color: #FA0;
+}
+.panelHeader {
+  font-size: 1.6em;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;  
 }
 </style>
