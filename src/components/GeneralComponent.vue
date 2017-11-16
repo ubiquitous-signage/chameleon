@@ -19,6 +19,7 @@
 <script>
 // import lecturesDummy from '../../lectures_dummy.json'
 import InfoComponent from './InfoComponent'
+import SocialComponent from './SocialComponent'
 import axios from 'axios'
 
 const API_ENDPOINT = 'http://localhost:9000/api'
@@ -50,7 +51,8 @@ export default {
     })
   },
   components: {
-    'info-component': InfoComponent
+    'info-component': InfoComponent,
+    'social-component': SocialComponent
   },
   computed: {
     internalItems: function () {
