@@ -24,6 +24,7 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .panel {
+  max-width: 100%;
   margin: 0 0 1vw 0;
   padding: 0;
   border: 0.1rem solid #2c3e50;
@@ -31,6 +32,7 @@ export default {
 }
 .panelHeader {
   font-size: 3.6rem;
+  width: 100%;
   vertical-align: middle;
   margin: 0;
   padding: 0;

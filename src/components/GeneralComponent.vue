@@ -80,23 +80,24 @@ export default {
   // background: #FF0;
   border-spacing: 1vw 0;
   border-collapse: separate;
-  table-layout: auto
+  table-layout: fixed;
 }
 @mixin generalItem {
   font-weight: bold;
   // background: #0bd;
   display: table-cell;
+  white-space: normal;
   text-align: center;
   vertical-align: top;
   padding: 0;
 }
 .internal {
   @include generalItem;
-  width: 40vw
+  width: 40vw;
 }
 .external {
   @include generalItem;
-  width: 40vw
+  width: 40vw;
 }
 .social {
   @include generalItem;

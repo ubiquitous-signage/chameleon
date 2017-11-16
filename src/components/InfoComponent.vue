@@ -22,6 +22,7 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .info {
+  max-width: 100%;
   // background-color: #F0F
 }
 </style>
