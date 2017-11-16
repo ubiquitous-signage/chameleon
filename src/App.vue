@@ -31,7 +31,7 @@ body {
   font-size: 1.6em;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',YuGothic, 'Yu Gothic','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

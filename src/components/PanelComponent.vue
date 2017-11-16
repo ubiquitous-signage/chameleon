@@ -35,6 +35,7 @@ export default {
 }
 .panelHeader {
   font-size: 3.6rem;
+  height: 1.5em;
   width: 100%;
   vertical-align: middle;
   margin: 0;
