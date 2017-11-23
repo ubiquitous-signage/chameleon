@@ -34,7 +34,7 @@ export default {
     fetchApi: async function (uri) {
       try {
         let res = await axios.get(uri)
-        this.items.push(res.data)
+        this.items = res.data
         console.log('response data')
         console.log(res.data)
         console.log('items data')
@@ -45,10 +45,7 @@ export default {
     }
   },
   created () {
-    let resources = ['/lectures', '/newsletters', '/portal', '/schedules', '/trains', '/weather']
-    resources.forEach((resource) => {
-      this.fetchApi(API_ENDPOINT + resource)
-    })
+    this.fetchApi(API_ENDPOINT + '/panels')
   },
   components: {
     'info-component': InfoComponent,
