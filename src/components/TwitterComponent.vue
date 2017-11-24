@@ -5,6 +5,7 @@
 </template>
 
 <script>
+// eslint-disable-next-line no-unused-expressions
 !(function (d, s, id) {
   var js
   var fjs = d.getElementsByTagName(s)[0]
