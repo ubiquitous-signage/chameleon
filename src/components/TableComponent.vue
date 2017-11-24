@@ -47,7 +47,6 @@ export default {
 <style lang="scss" scoped>
 .table {
   // background-color: #FFF;
-  font-size: 3rem;
   padding: 0.8%;
 }
 .content {

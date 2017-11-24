@@ -5,9 +5,12 @@
     </div>
     <table-component v-if="this.type=='table'" v-bind:contents="this.contents" />
     <twitter-component v-else-if="this.type=='twitter'" />
-    <template v-else>
+    <div v-else-if="this.type=='plain'">
+      {{ this.contents }}
+    </div>
+    <div v-else>
       [ERROR] Undifined Panel Type!
-    </template>
+    </div>
   </div>
 </template>
 
@@ -32,6 +35,7 @@ export default {
   padding: 0;
   border: 0.1rem solid #2c3e50;
   border-radius: 1rem;
+  font-size: 3rem;
 }
 .panelHeader {
   font-size: 3.6rem;
