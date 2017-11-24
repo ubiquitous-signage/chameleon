@@ -31,10 +31,10 @@ export default {
     }
   },
   methods: {
-    fetchApi: async function (uri) {
+    fetchPanels: async function (uri) {
       try {
         let res = await axios.get(uri)
-        this.items.push(res.data)
+        this.items = res.data
         console.log('response data')
         console.log(res.data)
         console.log('items data')
@@ -45,10 +45,12 @@ export default {
     }
   },
   created () {
-    let resources = ['/lectures', '/newsletters', '/portal', '/schedules', '/trains', '/weather']
-    resources.forEach((resource) => {
-      this.fetchApi(API_ENDPOINT + resource)
-    })
+    this.fetchPanels(API_ENDPOINT + '/panels')
+    setInterval(
+      function () {
+        this.fetchPanels(API_ENDPOINT + '/panels')
+      }.bind(this),
+      1000)
   },
   components: {
     'info-component': InfoComponent,
