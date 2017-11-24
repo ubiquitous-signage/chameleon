@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    fetchApi: async function (uri) {
+    fetchPanels: async function (uri) {
       try {
         let res = await axios.get(uri)
         this.items = res.data
@@ -45,7 +45,12 @@ export default {
     }
   },
   created () {
-    this.fetchApi(API_ENDPOINT + '/panels')
+    this.fetchPanels(API_ENDPOINT + '/panels')
+    setInterval(
+      function () {
+        this.fetchPanels(API_ENDPOINT + '/panels')
+      }.bind(this),
+      1000)
   },
   components: {
     'info-component': InfoComponent,
