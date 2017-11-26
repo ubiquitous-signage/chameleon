@@ -1,16 +1,60 @@
 <template>
   <div id="app">
     <header-component/>
-    <router-view/>
+    <transition name="fade" mode="out-in">
+      <router-view v-bind:items="this.items"></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 import HeaderComponent from './components/HeaderComponent'
+import axios from 'axios'
+
+const API_ENDPOINT = 'http://localhost:9000/api'
 export default {
   name: 'app',
   components: {
     'header-component': HeaderComponent
+  },
+  data () {
+    return {
+      items: [],
+      autoReload: null,
+      pages: ['/', '/wordcloud'],
+      page_index: 0
+    }
+  },
+  methods: {
+    fetchPanels: async function (uri) {
+      try {
+        let res = await axios.get(uri)
+        this.items = res.data
+        console.log('response data')
+        console.log(res.data)
+        console.log('items data')
+        console.log(this.items)
+      } catch (e) {
+        console.log(e)
+      }
+    }
+  },
+  created () {
+    this.fetchPanels(API_ENDPOINT + '/panels')
+    this.autoReload = setInterval(
+      function () {
+        this.fetchPanels(API_ENDPOINT + '/panels')
+      }.bind(this),
+      1000)
+    setInterval(
+      function () {
+        this.page_index = (this.page_index + 1) % this.pages.length
+        this.$router.replace(this.pages[this.page_index])
+      }.bind(this),
+      10000)
+  },
+  destroyed () {
+    clearInterval(this.autoReload)
   }
 }
 </script>
@@ -38,5 +82,11 @@ body {
   color: #2c3e50;
   margin: 0%;
   padding: 0;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0
 }
 </style>

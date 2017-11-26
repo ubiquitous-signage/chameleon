@@ -20,37 +20,13 @@
 // import lecturesDummy from '../../lectures_dummy.json'
 import InfoComponent from './InfoComponent'
 import SocialComponent from './SocialComponent'
-import axios from 'axios'
 
-const API_ENDPOINT = 'http://localhost:9000/api'
 export default {
   name: 'General',
-  data () {
-    return {
-      items: []
+  props: {
+    items: {
+      default: []
     }
-  },
-  methods: {
-    fetchPanels: async function (uri) {
-      try {
-        let res = await axios.get(uri)
-        this.items = res.data
-        console.log('response data')
-        console.log(res.data)
-        console.log('items data')
-        console.log(this.items)
-      } catch (e) {
-        console.log(e)
-      }
-    }
-  },
-  created () {
-    this.fetchPanels(API_ENDPOINT + '/panels')
-    setInterval(
-      function () {
-        this.fetchPanels(API_ENDPOINT + '/panels')
-      }.bind(this),
-      1000)
   },
   components: {
     'info-component': InfoComponent,
