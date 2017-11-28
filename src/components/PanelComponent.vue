@@ -56,19 +56,23 @@ div.wordPanel {
   margin: 1vw;
   border: 0;
   border-radius: $radius;
-  font-size: 2.0rem;
   text-align: center;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 1), rgba(180, 220, 255, 0.66) 20%,rgba(150, 180, 220, 0.33) 80%, transparent);
+  background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 1), rgba(180, 220, 255, 0.66) 30%,rgba(150, 180, 220, 0.33) 80%, transparent);
   float: left;
   position: relative;
   .plainText {
+    font-size: 2.0rem;
     position: absolute;
-    top: 2.0 * 3.2rem;
+    top: 2.5 * 3.2rem;
     right: 0;
-    bottom: 0;
     left: 0;
     margin: auto;
-    width: $radius * 1.5;
+    width: $radius * 1.6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    opacity: 0.8;
   }
   .panelHeader {
     line-height: normal;
@@ -78,10 +82,11 @@ div.wordPanel {
     height: 1.5em;
     width: 100%;
     vertical-align: middle;
-    margin: 0.5em 0 0 0;
+    margin: 0.8em 0 0 0;
     padding: 0 0 0 0;
     border: 0;
     background: transparent;
+    opacity: 0.8;
   }
 }
 </style>
