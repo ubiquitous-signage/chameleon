@@ -46,12 +46,12 @@ export default {
         this.fetchPanels(API_ENDPOINT + '/panels')
       }.bind(this),
       1000)
-    setInterval(
-      function () {
-        this.page_index = (this.page_index + 1) % this.pages.length
-        this.$router.replace(this.pages[this.page_index])
-      }.bind(this),
-      10000)
+    // setInterval(
+    //   function () {
+    //     this.page_index = (this.page_index + 1) % this.pages.length
+    //     this.$router.replace(this.pages[this.page_index])
+    //   }.bind(this),
+    //   10000)
   },
   destroyed () {
     clearInterval(this.autoReload)

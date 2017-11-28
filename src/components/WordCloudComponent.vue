@@ -1,18 +1,15 @@
 <template>
-  <div class="wordCloud">
-    Word Cloud
-    <ul class="wordCloudList">
-      <li class="wordCloudItem">
-        <info-component v-bind:items="wordCloudItems" />
-      </li>
-    </ul>
+  <div class="info">
+    <div>Word Cloud</div>
+    <transition-group name="fade">
+      <panel-component class="wordPanel" v-for="item in items" v-bind:key="item.title" v-bind:version="item.version" v-bind:type="item.type" v-bind:title="item.title" v-bind:contents="item.contents" />
+    </transition-group>
   </div>
 </template>
 
 <script>
 // import lecturesDummy from '../../lectures_dummy.json'
-import InfoComponent from './InfoComponent'
-import SocialComponent from './SocialComponent'
+import PanelComponent from './PanelComponent'
 
 export default {
   name: 'WordCloud',
@@ -22,8 +19,7 @@ export default {
     }
   },
   components: {
-    'info-component': InfoComponent,
-    'social-component': SocialComponent
+    'panel-component': PanelComponent
   },
   computed: {
     wordCloudItems: function () {

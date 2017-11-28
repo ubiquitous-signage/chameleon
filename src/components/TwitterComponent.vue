@@ -29,7 +29,7 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .twitter {
-  margin: 0 0 -1rem 0;
+  margin: 0;
   padding: 0;
 }
 </style>

@@ -52,7 +52,7 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 h1 {
-  font-size: 5.5rem;
+  font-size: 4.6rem;
   margin: 0;
   padding: 0;
 }
@@ -81,10 +81,10 @@ h1 {
   @include headerItem;
   width: 20%;
   .date {
-    font-size: 3.0rem;
+    font-size: 2.8rem;
   }
   .time {
-    font-size: 4.0rem;
+    font-size: 3.6rem;
   }
 }
 .title {

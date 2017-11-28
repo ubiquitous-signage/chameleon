@@ -47,7 +47,6 @@ export default {
 <style lang="scss" scoped>
 .table {
   // background-color: #FFF;
-  padding: 0.8%;
 }
 .content {
   text-align: left;

@@ -5,11 +5,13 @@
         <info-component v-bind:items="internalItems" />
       </li>
       <li class="external">
-        <!-- <external-component/> -->
         <info-component v-bind:items="externalItems" />
       </li>
+    </ul>
+    <ul class="generalList">
+      <li class="wordCloud">
+        <wordCloud-component v-bind:items="wordCloudItems" />
       <li class="social">
-        <!-- <social-component/> -->
         <social-component v-bind:items="socialItems" />
       </li>
     </ul>
@@ -20,6 +22,7 @@
 // import lecturesDummy from '../../lectures_dummy.json'
 import InfoComponent from './InfoComponent'
 import SocialComponent from './SocialComponent'
+import WordCloudComponent from './WordCloudComponent'
 
 export default {
   name: 'General',
@@ -30,7 +33,8 @@ export default {
   },
   components: {
     'info-component': InfoComponent,
-    'social-component': SocialComponent
+    'social-component': SocialComponent,
+    'wordCloud-component': WordCloudComponent
   },
   computed: {
     internalItems: function () {
@@ -41,6 +45,9 @@ export default {
     },
     socialItems: function () {
       return this.items.filter((item) => { return item.category === 'social' })
+    },
+    wordCloudItems: function () {
+      return this.items.filter((item) => { return item.category === 'wordcloud' })
     }
   }
 }
@@ -48,11 +55,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.general {
-  margin-top: 2vh;
-}
 .generalList {
-  margin: 0;
+  margin: 1vh 0 0 0;
   padding: 0;
   border: 0;
   display: table;
@@ -63,7 +67,8 @@ export default {
   table-layout: fixed;
 }
 @mixin generalItem {
-  font-weight: bold;
+  overflow: visible;
+  border: 0;
   // background: #0bd;
   display: table-cell;
   white-space: normal;
@@ -81,5 +86,9 @@ export default {
 }
 .social {
   @include generalItem;
+}
+.wordCloud {
+  @include generalItem;
+  width: 70vw;
 }
 </style>

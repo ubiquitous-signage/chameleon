@@ -23,6 +23,7 @@ export default {
 <style lang="scss" scoped>
 .info {
   max-width: 100%;
+  overflow: visible;
   // background-color: #F0F
 }
 </style>
