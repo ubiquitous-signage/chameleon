@@ -35,7 +35,7 @@ div.panel {
   margin: 0 0 0.5vw 0;
   padding: 0.5vw;
   border: 0;
-  box-shadow: 1px 1px 5px -2px #000000;
+  box-shadow: 1px 1px 5px -2px #000;
   font-size: 2.4rem;
   .panelHeader {
     text-align: left;
@@ -56,6 +56,8 @@ div.wordPanel {
   margin: 1vw;
   border: 0;
   border-radius: $radius;
+  // box-shadow: none;
+  box-shadow: -30px -30px 100px 0px rgba(0, 0, 0, 0.05) inset;
   text-align: center;
   background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 1), rgba(180, 220, 255, 0.66) 30%,rgba(150, 180, 220, 0.33) 80%, transparent);
   float: left;
