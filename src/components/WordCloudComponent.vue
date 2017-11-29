@@ -2,7 +2,7 @@
   <div class="info">
     <div>Word Cloud</div>
     <transition-group name="fade">
-      <panel-component class="wordPanel" v-for="item in items" v-bind:key="item.title" v-bind:version="item.version" v-bind:type="item.type" v-bind:title="item.title" v-bind:contents="item.contents" />
+      <panel-component class="wordPanel" v-for="item in items" :lang="lang" :key="item.title['ja']" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents" />
     </transition-group>
   </div>
 </template>
@@ -16,6 +16,9 @@ export default {
   props: {
     items: {
       default: []
+    },
+    lang: {
+      default: ''
     }
   },
   components: {
