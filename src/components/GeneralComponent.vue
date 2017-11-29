@@ -2,17 +2,17 @@
   <div class="general">
     <ul class="generalList">
       <li class="internal">
-        <info-component v-bind:items="internalItems" />
+        <info-component :items="internalItems" :lang="contexts['lang']"></info-component>
       </li>
       <li class="external">
-        <info-component v-bind:items="externalItems" />
+        <info-component :items="externalItems" :lang="contexts['lang']"></info-component>
       </li>
     </ul>
     <ul class="generalList">
       <li class="wordCloud">
-        <wordCloud-component v-bind:items="wordCloudItems" />
+        <wordCloud-component :items="wordCloudItems" :lang="contexts['lang']"></wordCloud-component>
       <li class="social">
-        <social-component v-bind:items="socialItems" />
+        <social-component :items="socialItems" :lang="contexts['lang']"></social-component>
       </li>
     </ul>
   </div>
@@ -29,6 +29,9 @@ export default {
   props: {
     items: {
       default: []
+    },
+    contexts: {
+      default: {}
     }
   },
   components: {

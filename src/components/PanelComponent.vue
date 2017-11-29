@@ -1,12 +1,12 @@
 <template>
   <div class="panel">
     <div class="panelHeader">
-      {{ this.title }}
+      {{ this.title[this.lang] }}
     </div>
-    <table-component v-if="this.type=='table'" v-bind:contents="this.contents" />
+    <table-component v-if="this.type=='table'" :lang="lang" :contents="contents" />
     <twitter-component v-else-if="this.type=='twitter'" />
     <div class="plainText" v-else-if="this.type=='plain'">
-      {{ this.contents }}
+      {{ this.contents[this.lang] }}
     </div>
     <div v-else>
       [ERROR] Undifined Panel Type!
@@ -19,7 +19,7 @@ import TableComponent from './TableComponent'
 import TwitterComponent from './TwitterComponent'
 export default {
   name: 'PanelComponent',
-  props: ['version', 'type', 'title', 'contents'],
+  props: ['version', 'type', 'title', 'contents', 'lang'],
   components: {
     'table-component': TableComponent,
     'twitter-component': TwitterComponent

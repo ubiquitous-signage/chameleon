@@ -5,7 +5,7 @@
         <tr v-for="content in formattedContents" v-bind:key="content.to_string">
           <td v-for="message in content" v-bind:key="message.to_string">
             <div v-if="message['type'] === 'String'">
-              {{ message['payload'] }}
+              {{ message['payload'][lang] }}
             </div>
             <div v-if="message['type'] === 'Image'">
               <img v-bind:src="HAMSTER + message['payload']" />
@@ -28,6 +28,9 @@ export default {
   props: {
     contents: {
       default: [[]]
+    },
+    lang: {
+      default: ''
     }
   },
   computed: {

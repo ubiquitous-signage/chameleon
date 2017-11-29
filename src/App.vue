@@ -2,7 +2,7 @@
   <div id="app">
     <header-component/>
     <transition name="fade" mode="out-in">
-      <router-view v-bind:items="this.items"></router-view>
+      <router-view :items="items" :contexts="contexts"></router-view>
     </transition>
   </div>
 </template>
@@ -20,30 +20,37 @@ export default {
   data () {
     return {
       items: [],
+      contexts: { 'lang': 'ja' },
       autoReload: null,
       pages: ['/', '/wordcloud'],
       page_index: 0
     }
   },
   methods: {
-    fetchPanels: async function (uri) {
+    fetchPanels: async function () {
       try {
-        let res = await axios.get(uri)
+        let res = await axios.get(API_ENDPOINT + '/panels')
         this.items = res.data
-        console.log('response data')
-        console.log(res.data)
-        console.log('items data')
-        console.log(this.items)
+      } catch (e) {
+        console.log(e)
+      }
+    },
+    fetchContexts: async function () {
+      try {
+        let res = await axios.get(API_ENDPOINT + '/contexts')
+        this.contexts = res.data
       } catch (e) {
         console.log(e)
       }
     }
   },
   created () {
-    this.fetchPanels(API_ENDPOINT + '/panels')
+    this.fetchPanels()
+    this.fetchContexts()
     this.autoReload = setInterval(
       function () {
-        this.fetchPanels(API_ENDPOINT + '/panels')
+        this.fetchPanels()
+        this.fetchContexts()
       }.bind(this),
       1000)
     // setInterval(

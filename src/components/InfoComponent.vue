@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <panel-component v-for="item in items" v-bind:key="item.title" v-bind:version="item.version" v-bind:type="item.type" v-bind:title="item.title" v-bind:contents="item.contents" />
+    <panel-component v-for="item in items" :lang="lang" :key="item.title" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents"></panel-component>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
     return {
     }
   },
-  props: ['items'],
+  props: ['items', 'lang'],
   components: {
     'panel-component': PanelComponent
   }
