@@ -72,6 +72,7 @@ export default {
   justify-content: space-around;
 }
 @mixin flexContent {
+  height: 100%;
   overflow: hidden;
   border: 0;
   // background: #0bd;
@@ -99,5 +100,6 @@ export default {
 .ad {
   @include flexContent;
   flex-basis: 100%;
+  padding: 0;
 }
 </style>
