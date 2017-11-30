@@ -1,6 +1,8 @@
 <template>
   <div class="ad">
-    <panel-component v-for="item in items" :lang="lang" :key="item.title" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents"></panel-component>
+    <div class="panel" v-for="item in items" :key="item.title.ja">
+      <panel-component :lang="lang" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents"></panel-component>
+    </div>
   </div>
 </template>
 
@@ -21,9 +23,11 @@ export default {
   width: 100%;
   overflow: visible;
   display: flex;
-  // justify-content: space-between;
-  panel-component {
-    flex-basis: 100%
+  align-content: flex-start;
+  flex-wrap: wrap;
+  .panel {
+    flex-basis: 31.4%;
+    padding: 10px;
   }
 }
 </style>

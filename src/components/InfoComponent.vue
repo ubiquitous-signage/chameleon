@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <panel-component v-for="item in items" :lang="lang" :key="item.title" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents"></panel-component>
+    <panel-component v-for="item in items" :lang="lang" :key="item.title.ja" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents"></panel-component>
   </div>
 </template>
 

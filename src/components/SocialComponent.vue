@@ -1,6 +1,6 @@
 <template>
   <div class="social">
-    <panel-component :key="'Twitter'" :lang="lang" :version="0.0" :type="'twitter'" :title="{'ja': 'Twitter', 'en': 'Twitter'}" />
+    <panel-component class="twitter" :key="'Twitter'" :lang="lang" :version="0.0" :type="'twitter'" :title="{'ja': 'Twitter', 'en': 'Twitter'}" />
   </div>
 </template>
 
@@ -20,5 +20,8 @@ export default {
 .social {
   max-width: 100%;
   // background-color: #F0F
+}
+.twitter {
+  height: 600px;
 }
 </style>
