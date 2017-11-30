@@ -30,11 +30,11 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 div.panel {
+  box-sizing: border-box;
+  width: 100%;
   text-align: left;
-  max-width: 100%;
-  margin: 0 0 0.5vw 0;
-  padding: 0.5vw;
-  border: 0;
+  margin: 0 0px 0px 0px;
+  padding: 1vw;
   box-shadow: 1px 1px 5px -2px #000;
   font-size: 2.4rem;
   .panelHeader {
@@ -42,7 +42,7 @@ div.panel {
     font-weight: bold;
     font-size: 3.2rem;
     height: 1.5em;
-    width: 100%;
+    max-width: 100%;
     vertical-align: middle;
     margin: 0;
     padding: 0 0 0 0.5em;

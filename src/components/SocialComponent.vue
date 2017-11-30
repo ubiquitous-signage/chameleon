@@ -1,6 +1,6 @@
 <template>
-  <div class="info">
-    <panel-component v-bind:key="'Twitter'" v-bind:version="0.0" v-bind:type="'twitter'" v-bind:title="'Twitter'" />
+  <div class="social">
+    <panel-component :key="'Twitter'" :lang="lang" :version="0.0" :type="'twitter'" :title="{'ja': 'Twitter', 'en': 'Twitter'}" />
   </div>
 </template>
 
@@ -8,10 +8,7 @@
 import PanelComponent from './PanelComponent'
 export default {
   name: 'SocialComponent',
-  data () {
-    return {
-    }
-  },
+  props: ['lang'],
   components: {
     'panel-component': PanelComponent
   }
@@ -20,7 +17,7 @@ export default {
 
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.info {
+.social {
   max-width: 100%;
   // background-color: #F0F
 }

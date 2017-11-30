@@ -1,20 +1,16 @@
 <template>
   <div class="general">
-    <ul class="generalList">
-      <li class="internal">
-        <info-component :items="internalItems" :lang="contexts['lang']"></info-component>
-      </li>
-      <li class="external">
-        <info-component :items="externalItems" :lang="contexts['lang']"></info-component>
-      </li>
-    </ul>
-    <ul class="generalList">
-      <li class="wordCloud">
-        <wordCloud-component :items="wordCloudItems" :lang="contexts['lang']"></wordCloud-component>
-      <li class="social">
-        <social-component :items="socialItems" :lang="contexts['lang']"></social-component>
-      </li>
-    </ul>
+    <div class="flexContainer">
+      <info-component class="internal" :items="internalItems" :lang="contexts['lang']"></info-component>
+      <info-component class="external" :items="externalItems" :lang="contexts['lang']"></info-component>
+    </div>
+    <div class="flexContainer">
+      <wordCloud-component class="wordCloud" :items="wordCloudItems" :lang="contexts['lang']"></wordCloud-component>
+      <social-component class="social" :items="socialItems" :lang="contexts['lang']"></social-component>
+    </div>
+    <div class="flexContainer">
+        <ad-component class="ad" :items="adItems" :lang="contexts['lang']"></ad-component>
+    </div>
   </div>
 </template>
 
@@ -23,6 +19,7 @@
 import InfoComponent from './InfoComponent'
 import SocialComponent from './SocialComponent'
 import WordCloudComponent from './WordCloudComponent'
+import AdComponent from './AdComponent'
 
 export default {
   name: 'General',
@@ -37,7 +34,8 @@ export default {
   components: {
     'info-component': InfoComponent,
     'social-component': SocialComponent,
-    'wordCloud-component': WordCloudComponent
+    'wordCloud-component': WordCloudComponent,
+    'ad-component': AdComponent
   },
   computed: {
     internalItems: function () {
@@ -51,6 +49,9 @@ export default {
     },
     wordCloudItems: function () {
       return this.items.filter((item) => { return item.category === 'wordcloud' })
+    },
+    adItems: function () {
+      return this.items.filter((item) => { return item.category === 'ad' })
     }
   }
 }
@@ -58,40 +59,45 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.generalList {
-  margin: 1vh 0 0 0;
+.general {
+  padding: 1vw
+}
+.flexContainer {
+  margin: 0 0 0 0;
   padding: 0;
   border: 0;
-  display: table;
+  display: flex;
   width: 100%;
   // background: #FF0;
-  border-spacing: 1vw 0;
-  border-collapse: separate;
-  table-layout: fixed;
+  justify-content: space-around;
 }
-@mixin generalItem {
-  overflow: visible;
+@mixin flexContent {
+  overflow: hidden;
   border: 0;
   // background: #0bd;
-  display: table-cell;
   white-space: normal;
   text-align: center;
   vertical-align: top;
-  padding: 0;
+  padding: 10px;
 }
 .internal {
-  @include generalItem;
-  width: 40vw;
+  @include flexContent;
+  flex-basis: 50%;
 }
 .external {
-  @include generalItem;
-  width: 40vw;
+  @include flexContent;
+  flex-basis: 50%;
 }
 .social {
-  @include generalItem;
+  @include flexContent;
+  flex-basis: 30%;
 }
 .wordCloud {
-  @include generalItem;
-  width: 70vw;
+  @include flexContent;
+  flex-basis: 70%;
+}
+.ad {
+  @include flexContent;
+  flex-basis: 100%;
 }
 </style>
