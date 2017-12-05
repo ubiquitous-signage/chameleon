@@ -1,9 +1,6 @@
 <template>
   <div class="wordCloud">
-    <panel-component class="wordCloudPanel" :lang="lang" :type="'wordCloud'" :title="{ja: 'ワードクラウド（音声認識）', en: 'Word Cloud (Voice Recognition)'}" :words="words"></panel-component>
-    <!-- <transition-group name="fade">
-      <panel-component class="wordPanel" v-for="item in items" :lang="lang" :key="item.title['ja']" :version="item.version" :type="item.type" :title="item.title" :contents="item.contents" />
-    </transition-group> -->
+    <panel-component class="wordCloudPanel" :lang="lang" :type="'wordCloud'" :title="{ja: 'ワードクラウド（音声認識）', en: 'Word Cloud (Voice Recognition)'}" :contents="items[0].contents"></panel-component>
   </div>
 </template>
 
@@ -15,45 +12,10 @@ export default {
   name: 'WordCloud',
   props: {
     items: {
-      default: []
+      default: [{contents: [{'text': '', 'count': 0}]}]
     },
     lang: {
       default: ''
-    },
-    words: {
-      default: [{
-        'text': 'ダイワ',
-        'count': 8
-      },
-      {
-        'text': 'ユビキタス',
-        'count': 12
-      },
-      {
-        'text': 'IoT',
-        'count': 10
-      },
-      {
-        'text': 'HCI',
-        'count': 5
-      },
-      {
-        'text': 'SDN',
-        'count': 6
-      },
-      {
-        'text': 'くろぎ',
-        'count': 12
-      },
-      {
-        'text': 'TRON',
-        'count': 3
-      },
-      {
-        'text': '総合分析情報学',
-        'count': 3
-      }
-      ]
     }
   },
   components: {

@@ -48,7 +48,7 @@ export default {
       return this.items.filter((item) => { return item.category === 'social' })
     },
     wordCloudItems: function () {
-      return this.items.filter((item) => { return item.category === 'wordcloud' })
+      return this.items.filter((item) => { return item.category === 'wordCloud' })
     },
     adItems: function () {
       return this.items.filter((item) => { return item.category === 'ad' })
