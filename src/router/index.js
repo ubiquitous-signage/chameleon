@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import GeneralComponent from '@/components/GeneralComponent'
-import WordCloudComponent from '@/components/WordCloudComponent'
+import AboutComponent from '@/components/AboutComponent'
 
 Vue.use(Router)
 
@@ -14,9 +14,9 @@ export default new Router({
       props: true
     },
     {
-      path: '/wordcloud',
-      name: 'WordCloudComponent',
-      component: WordCloudComponent,
+      path: '/about',
+      name: 'AboutComponent',
+      component: AboutComponent,
       props: true
     }
   ]

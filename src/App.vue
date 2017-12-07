@@ -22,7 +22,7 @@ export default {
       items: [],
       contexts: { 'lang': 'ja' },
       autoReload: null,
-      pages: ['/', '/wordcloud'],
+      pages: ['/', '/about'],
       page_index: 0
     }
   },
@@ -55,12 +55,12 @@ export default {
         this.fetchContexts()
       }.bind(this),
       1000)
-    // setInterval(
-    //   function () {
-    //     this.page_index = (this.page_index + 1) % this.pages.length
-    //     this.$router.replace(this.pages[this.page_index])
-    //   }.bind(this),
-    //   10000)
+    setInterval(
+      function () {
+        this.page_index = (this.page_index + 1) % this.pages.length
+        this.$router.replace(this.pages[this.page_index])
+      }.bind(this),
+      10000)
   },
   destroyed () {
     clearInterval(this.autoReload)
