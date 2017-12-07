@@ -30,7 +30,9 @@ export default {
     fetchPanels: async function () {
       try {
         let res = await axios.get(API_ENDPOINT + '/panels')
-        this.items = res.data
+        if (JSON.stringify(this.items.sort()) !== JSON.stringify(res.data.sort())) {
+          this.items = res.data
+        }
       } catch (e) {
         console.log(e)
       }

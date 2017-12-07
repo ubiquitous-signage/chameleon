@@ -5,7 +5,8 @@
     </div>
     <table-component v-if="this.type=='table'" :lang="lang" :contents="contents" />
     <twitter-component v-else-if="this.type=='twitter'" />
-    <wordcloud v-else-if="this.type=='wordCloud'" :data="contents" nameKey="text" valueKey="count" color="Category10"></wordcloud>
+    <word-cloud v-else-if="this.type='wordCloud'" :contents="contents"></word-cloud>
+    <!-- <wordcloud v-else-if="this.type=='wordCloud'" :data="contents" nameKey="text" valueKey="count" color="Category10"></wordcloud> -->
     <div class="plainText" v-else-if="this.type=='plain'">
       {{ this.contents[this.lang] }}
     </div>
@@ -18,7 +19,8 @@
 <script>
 import TableComponent from './TableComponent'
 import TwitterComponent from './TwitterComponent'
-import wordcloud from 'vue-wordcloud'
+// import wordcloud from 'vue-wordcloud'
+import WordCloud from './WordCloud'
 
 export default {
   name: 'PanelComponent',
@@ -26,7 +28,8 @@ export default {
   components: {
     'table-component': TableComponent,
     'twitter-component': TwitterComponent,
-    wordcloud
+    // wordcloud
+    'word-cloud': WordCloud
   }
 }
 </script>
