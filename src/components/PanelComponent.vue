@@ -3,7 +3,7 @@
     <div class="panelHeader">
       {{ this.title[this.lang] }}
     </div>
-    <table-component v-if="this.type=='table'" :lang="lang" :contents="contents" />
+    <table-component v-if="this.type=='table'" :id="this.title.ja" :lang="lang" :contents="contents" />
     <twitter-component v-else-if="this.type=='twitter'" />
     <word-cloud v-else-if="this.type='wordCloud'" :contents="contents"></word-cloud>
     <!-- <wordcloud v-else-if="this.type=='wordCloud'" :data="contents" nameKey="text" valueKey="count" color="Category10"></wordcloud> -->

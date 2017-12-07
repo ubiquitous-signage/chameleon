@@ -1,6 +1,6 @@
 <template>
-  <div class="table">
-    <table class="content">
+  <div class="table" :id="id">
+    <table>
       <tbody>
         <tr v-for="content in formattedContents" v-bind:key="content.to_string">
           <td v-for="message in content" v-bind:key="message.to_string">
@@ -31,6 +31,9 @@ export default {
     },
     lang: {
       default: ''
+    },
+    id: {
+      default: ''
     }
   },
   computed: {
@@ -50,9 +53,28 @@ export default {
 <style lang="scss" scoped>
 .table {
   // background-color: #FFF;
-}
-.content {
   text-align: left;
+  width: 100%;
+}
+#東京の天気 {
+  text-align: center;
+  font-size: 0.75em;
+  width: 100%;
+  tbody {
+    tr {
+      td {
+        overflow: visible;
+        div {
+          overflow: visible;
+          width: 47px;
+          img {
+            width: 43px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
 }
 img {
   height: 1.5em;
