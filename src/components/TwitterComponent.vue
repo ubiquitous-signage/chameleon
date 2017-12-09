@@ -1,27 +1,49 @@
 <template>
   <div class="twitter">
-    <a class="twitter-timeline"  href="https://twitter.com/search?q=%E3%83%80%E3%82%A4%E3%83%AF%E3%83%A6%E3%83%93%E3%82%AD%E3%82%BF%E3%82%B9%E5%AD%A6%E8%A1%93%E7%A0%94%E7%A9%B6%E9%A4%A8" data-widget-id="930820136956715008" data-chrome="noheader nofooter transparent noborders noscrollbar">ダイワユビキタス学術研究館に関するツイート</a>
+    <a class="twitter-timeline" data-widget-id="930820136956715008" data-chrome="noheader nofooter transparent noborders noscrollbar"></a>
   </div>
 </template>
 
 <script>
-// eslint-disable-next-line no-unused-expressions
-!(function (d, s, id) {
-  var js
-  var fjs = d.getElementsByTagName(s)[0]
-  var p = /^http:/.test(d.location) ? 'http' : 'https'
-  if (!d.getElementById(id)) {
-    js = d.createElement(s)
-    js.id = id
-    js.src = p + '://platform.twitter.com/widgets.js'
-    fjs.parentNode.insertBefore(js, fjs)
+let addScriptPromise = null
+function addScript (src) {
+  if (!addScriptPromise) {
+    const s = document.createElement('script')
+    s.setAttribute('src', src)
+    document.body.appendChild(s)
+    addScriptPromise = new Promise((resolve, reject) => {
+      s.onload = resolve
+    })
   }
-})(document, 'script', 'twitter-wjs')
+  return addScriptPromise
+}
 
 export default {
   name: 'TwitterComponent',
   data () {
-    return {}
+    return {
+      isTweetLoaded: false,
+      isTweetAvailable: true
+    }
+  },
+  props: {
+    id: {
+      type: String,
+      default: '930820136956715008'
+    },
+    options: {
+      type: Object,
+      default () {
+        return {chrome: 'noheader nofooter noscrollbar noborder'}
+      }
+    }
+  },
+  mounted () {
+    if (!window.twttr) {
+      addScript('//platform.twitter.com/widgets.js').then(() => window.twttr.widgets.createTimeline(this.id, this.$el, this.options))
+    } else {
+      window.twttr.widgets.createTimeline(this.id, this.$el, this.options)
+    }
   }
 }
 </script>
