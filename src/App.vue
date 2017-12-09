@@ -22,7 +22,7 @@ export default {
       items: [],
       contexts: { 'lang': 'ja' },
       autoReload: null,
-      pages: ['/', '/about'],
+      pages: ['/', '/about', '/map'],
       page_index: 0
     }
   },
