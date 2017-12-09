@@ -32,7 +32,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 .wordCloudPanel {
-  // height: 600px;
+  height: 600px;
 }
 // .wordCloudList {
 //   margin: 0;

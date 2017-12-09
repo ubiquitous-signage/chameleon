@@ -59,7 +59,8 @@ export default {
 #東京の天気 {
   text-align: center;
   font-size: 0.75em;
-  width: 100%;
+  width: auto;
+  margin: auto;
   tbody {
     tr {
       td {

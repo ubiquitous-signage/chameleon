@@ -48,7 +48,8 @@ export default {
       return this.items.filter((item) => { return item.category === 'social' })
     },
     wordCloudItems: function () {
-      return this.items.filter((item) => { return item.category === 'wordCloud' })
+      let items = this.items.filter((item) => { return item.category === 'wordCloud' })
+      return items.length === 0 ? [{contents: [{'text': '', 'count': 0}]}] : items
     },
     adItems: function () {
       return this.items.filter((item) => { return item.category === 'ad' })

@@ -5,7 +5,7 @@
     </div>
     <table-component v-if="this.type=='table'" :id="this.title.ja" :lang="lang" :contents="contents" />
     <twitter-component v-else-if="this.type=='twitter'" />
-    <word-cloud v-else-if="this.type='wordCloud'" :contents="contents"></word-cloud>
+    <word-cloud v-else-if="this.type=='wordCloud'" :contents="contents"></word-cloud>
     <!-- <wordcloud v-else-if="this.type=='wordCloud'" :data="contents" nameKey="text" valueKey="count" color="Category10"></wordcloud> -->
     <div class="plainText" v-else-if="this.type=='plain'">
       {{ this.contents[this.lang] }}
@@ -42,7 +42,7 @@ div.panel {
   margin: 0;
   padding: 1vw;
   box-shadow: 1px 1px 5px -2px #000;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   .panelHeader {
     text-align: left;
     font-weight: bold;

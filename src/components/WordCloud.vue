@@ -1,7 +1,7 @@
 <template>
   <div class="wordcloud">
     <div class="word" v-for="word in contents" :key="word.text" 
-    :style="{fontSize: word.count + 'em', color: 'rgba(10, 30, 60, ' +  (word.count / maxCount) + ')', zIndex: word.count, left: (centeredRandom() * 600 + 50) + 'px', top: (centeredRandom() * 300 + 30) + 'px', transform: 'rotate(' + (Math.random() * 180 - 90) + 'deg)'}">
+    :style="{fontSize: word.count + 'em', color: 'rgba(10, 30, 60, ' +  (word.count / maxCount) + ')', zIndex: word.count, left: (centeredRandom() * 500 + 100) + 'px', top: (centeredRandom() * 300 + 50) + 'px', transform: 'rotate(' + (Math.random() * 120 - 60) + 'deg)'}">
       {{ word.text }}
     </div>
   </div>
@@ -26,7 +26,7 @@ export default {
   },
   computed: {
     maxCount: function () {
-      return Math.max.apply(null, this.contents.map((word) => {return word.count}))
+      return Math.max.apply(null, this.contents.map((word) => { return word.count }))
     }
   }
 }
@@ -36,8 +36,9 @@ export default {
 <style lang="scss" scoped>
 .wordcloud {
   width: 100%;
-  height: 360px;
+  height: 90%;
   position: relative;
+  text-wrap: none;
 }
 .word {
   position: absolute;
