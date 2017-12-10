@@ -59,18 +59,20 @@ export default {
 #東京の天気 {
   text-align: center;
   font-size: 0.75em;
-  width: auto;
-  margin: auto;
-  tbody {
-    tr {
-      td {
-        overflow: visible;
-        div {
+  table {
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+    tbody {
+      tr {
+        td {
           overflow: visible;
-          width: 47px;
-          img {
-            width: 43px;
-            height: auto;
+          div {
+            overflow: visible;
+            img {
+              width: 42px;
+              height: auto;
+            }
           }
         }
       }
