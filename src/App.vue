@@ -11,7 +11,6 @@
 import HeaderComponent from './components/HeaderComponent'
 import axios from 'axios'
 
-const API_ENDPOINT = 'http://localhost:9000/api'
 export default {
   name: 'app',
   components: {
@@ -22,14 +21,16 @@ export default {
       items: [],
       contexts: { 'lang': 'ja' },
       autoReload: null,
-      pages: ['/', '/about', '/map'],
+      pages: ['/', '/map', '/about'],
+      // pages: ['/'],
+      // pages: ['/map'],
       page_index: 0
     }
   },
   methods: {
     fetchPanels: async function () {
       try {
-        let res = await axios.get(API_ENDPOINT + '/panels')
+        let res = await axios.get(process.env.API_ENDPOINT + '/panels')
         if (JSON.stringify(this.items.sort()) !== JSON.stringify(res.data.sort())) {
           this.items = res.data
         }
@@ -39,7 +40,7 @@ export default {
     },
     fetchContexts: async function () {
       try {
-        let res = await axios.get(API_ENDPOINT + '/contexts')
+        let res = await axios.get(process.env.API_ENDPOINT + '/contexts')
         this.contexts = res.data
       } catch (e) {
         console.log(e)

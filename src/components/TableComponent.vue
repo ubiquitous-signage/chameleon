@@ -22,7 +22,7 @@ export default {
   name: 'TableComponent',
   data () {
     return {
-      HAMSTER: 'http://localhost:9000'
+      HAMSTER: process.env.HAMSTER
     }
   },
   props: {

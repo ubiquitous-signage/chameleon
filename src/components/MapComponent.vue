@@ -38,7 +38,6 @@
 
 <script>
 import axios from 'axios'
-const API_ENDPOINT = 'http://localhost:9000/api'
 
 export default {
   name: 'map',
@@ -52,7 +51,7 @@ export default {
   methods: {
     fetchRooms: async function () {
       try {
-        let res = await axios.get(API_ENDPOINT + '/rooms')
+        let res = await axios.get(process.env.API_ENDPOINT + '/rooms')
         if (JSON.stringify(this.rooms.sort()) !== JSON.stringify(res.data.sort())) {
           this.rooms = res.data
           console.log(this.rooms)
