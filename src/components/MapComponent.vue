@@ -20,7 +20,7 @@
             </span>
           </div>
         </div>
-        <div v-else :id="roomName.off" :key="roomName">
+        <div v-else class="room-off" :id="roomName" :key="roomName">
           <div>
             {{ roomName }}
           </div>
@@ -120,7 +120,7 @@ img {
   }
   &-on {
     @include room;
-    background: radial-gradient(ellipse closest-side at center, white, white 40%, rgb(230, 230, 190) 80%, rgb(210, 210, 190));
+    background: radial-gradient(ellipse closest-side at center, white, white 40%, rgb(255, 245, 130) 80%, rgb(240, 220, 110));
   }
 }
 .roomInfo {
