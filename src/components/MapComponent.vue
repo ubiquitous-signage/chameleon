@@ -112,14 +112,16 @@ img {
   border-right: solid 5px #000;
   flex-wrap: wrap;
 }
+$light-off: rgb(210, 210, 210);
+$light-on: radial-gradient(ellipse closest-side at center, white, white 40%, rgb(255, 245, 130) 80%, rgb(240, 220, 110));
 .room {
   &-off {
     @include room;
-    background: rgb(190, 190, 190);
+    background: $light-off;
   }
   &-on {
     @include room;
-    background: radial-gradient(ellipse closest-side at center, white, white 40%, rgb(255, 245, 130) 80%, rgb(240, 220, 110));
+    background: $light-on
   }
 }
 .roomInfo {
@@ -170,7 +172,7 @@ img {
 }
 #hall {
   @include flex-centering;
-  background: rgb(180, 230, 255);
+  background: $light-off;
   position: absolute;
   bottom: 0%;
   border-top: solid 5px #000;
