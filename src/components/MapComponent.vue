@@ -44,8 +44,8 @@ export default {
   data () {
     return {
       title: {
-        'ja': 'フロアマップ',
-        'en': 'Floor map'
+        'ja': 'フロアの状況',
+        'en': 'Floor context'
       },
       roomNames: ['A301', 'A302', 'A303', 'A304', 'A305'],
       rooms: [],
