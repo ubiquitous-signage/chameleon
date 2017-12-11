@@ -1,21 +1,32 @@
 <template>
   <div class="about">
     <h2>
-      このシステムについて
+      {{ this.title[lang] }}
     </h2>
     <div class="paragraphs">
-      <ul>
-        <li>
-          <img src="../assets/about_jp.png">
-        </li>
-      </ul>
+      <img v-if="lang==='ja'" src="../assets/about_ja.png">
+      <img v-if="lang==='en'" src="../assets/about_en.png">
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'about'
+  name: 'about',
+  data () {
+    return {
+      title: {
+        'ja': 'UTsignageのアーキテクチャ',
+        'en': 'UTsignage architecture'
+      }
+    }
+  },
+  props: ['contexts'],
+  computed: {
+    lang: function () {
+      return this.contexts['lang']
+    }
+  }
 }
 </script>
 
@@ -24,26 +35,18 @@ export default {
 .about {
   text-align: left;
   font-size: 3.5rem;
-  padding: 1vw
-}
-
-.about {
-  padding: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .about h2 {
   font-size: 3.5rem;
-  margin-top: 4.0rem;
-  margin-bottom: 1.0rem;
 }
 
 img {
   display: block;
   width: 100%;
-  margin-top: 0rem;
-  margin-bottom: 4rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
 </style>
