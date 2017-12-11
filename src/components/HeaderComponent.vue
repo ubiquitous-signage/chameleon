@@ -1,7 +1,9 @@
 <template>
   <div class="header">
     <ul class="headerList">
-      <li class="title"><h1>{{title}}</h1></li>
+      <li class="title">
+        <h1>{{title[lang]}}</h1>
+      </li>
       <li class="clock">
         <div class="date">
           {{date}}
@@ -24,9 +26,18 @@ export default {
   name: 'HeaderComponent',
   data () {
     return {
-      title: 'ダイワユビキタス学術研究館 3階',
+      title: {
+        'ja': 'ダイワユビキタス学術研究館 3階',
+        'en': 'Daiwa Ubiquitous Computing Research Building 3F'
+      },
       date: nowDate.format(dateFormat),
       time: nowDate.format(timeFormat)
+    }
+  },
+  props: ['contexts'],
+  computed: {
+    lang () {
+      return this.contexts.lang ? this.contexts.lang : 'ja'
     }
   },
   methods: {

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <header-component/>
+    <header-component :contexts="contexts"></header-component>
     <transition name="fade" mode="out-in">
       <router-view :items="items" :contexts="contexts"></router-view>
     </transition>
