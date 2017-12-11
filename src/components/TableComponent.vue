@@ -4,7 +4,7 @@
       <tbody>
         <tr v-for="content in formattedContents" v-bind:key="content.to_string">
           <td v-for="message in content" v-bind:key="message.to_string">
-            <div v-if="message['type'] === 'String'">
+            <div v-if="message['type'] === 'String'" :class="message['scrollable'] ? 'scrollable' : 'nowrap'">
               {{ message['payload'][lang] }}
             </div>
             <div v-if="message['type'] === 'Image'">
@@ -82,5 +82,11 @@ export default {
 img {
   height: 1.5em;
   vertical-align: middle;
+}
+.nowrap {
+  white-space: nowrap;
+}
+.scrollable {
+  
 }
 </style>
