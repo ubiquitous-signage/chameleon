@@ -1,7 +1,7 @@
 <template>
   <div class="map">
     <h2>
-      フロアマップ
+      {{ title[lang] }}
     </h2>
     <div id="all">
       <template v-for="roomName in roomNames">
@@ -43,6 +43,10 @@ export default {
   name: 'map',
   data () {
     return {
+      title: {
+        'ja': 'フロアマップ',
+        'en': 'Floor map'
+      },
       roomNames: ['A301', 'A302', 'A303', 'A304', 'A305'],
       rooms: [],
       hallName: {
