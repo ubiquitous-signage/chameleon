@@ -27,8 +27,8 @@ export default {
   data () {
     return {
       title: {
-        'ja': 'ダイワユビキタス学術研究館 3階',
-        'en': 'Daiwa Ubiquitous Computing Research Building 3F'
+        'ja': '東京大学大学院情報学環\nダイワユビキタス学術研究館 3階',
+        'en': 'UTokyo III Daiwa Ubiquitous Computing Research Building 3F'
       },
       date: nowDate.format(dateFormat),
       time: nowDate.format(timeFormat)
@@ -63,10 +63,11 @@ export default {
 <!-- Add "scoped" atribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 h1 {
-  font-size: 4.6rem;
+  font-size: 4.2rem;
   margin: 0;
   padding: 0;
-  line-height: 1.2em
+  line-height: 1.2em;
+  white-space: pre-wrap;
 }
 .headerList {
   margin: 0;
