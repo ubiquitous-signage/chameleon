@@ -38,12 +38,11 @@ export default {
   width: 100%;
   height: 90%;
   position: relative;
-  text-wrap: none;
 }
 .word {
   position: absolute;
   width:auto;
   font-weight: bold;
-  word-wrap: none;
+  white-space: nowrap;
 }
 </style>
