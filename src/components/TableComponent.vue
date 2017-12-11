@@ -55,6 +55,9 @@ export default {
   // background-color: #FFF;
   text-align: left;
   width: 100%;
+  td {
+    vertical-align: top;
+  }
 }
 #東京の天気 {
   text-align: center;
@@ -81,12 +84,12 @@ export default {
 }
 img {
   height: 1.5em;
-  vertical-align: middle;
+  padding-top: -0.25em;
 }
 .nowrap {
   white-space: nowrap;
 }
 .scrollable {
-  
+
 }
 </style>
