@@ -66,6 +66,7 @@ h1 {
   font-size: 4.6rem;
   margin: 0;
   padding: 0;
+  line-height: 1.2em
 }
 .headerList {
   margin: 0;
@@ -73,6 +74,7 @@ h1 {
   border: 0;
   display: table;
   width: 100%;
+  height: 150px;
   // background: #FF0;
   background: #2c3e50;
   color: #FFF;
@@ -86,7 +88,7 @@ h1 {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
-  padding: 1vh 3vw;
+  padding: 0 2vw;
 }
 .clock {
   @include headerItem;
