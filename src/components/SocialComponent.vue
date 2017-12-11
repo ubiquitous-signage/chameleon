@@ -22,6 +22,6 @@ export default {
   // background-color: #F0F
 }
 .twitter {
-  height: 600px;
+  height: 480px;
 }
 </style>

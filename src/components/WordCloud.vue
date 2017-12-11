@@ -1,7 +1,7 @@
 <template>
   <div class="wordcloud">
     <div class="word" v-for="word in contents" :key="word.text" 
-    :style="{fontSize: word.count + 'em', color: 'rgba(10, 30, 60, ' +  (word.count / maxCount) + ')', zIndex: word.count, left: (centeredRandom() * 500 + 100) + 'px', top: (centeredRandom() * 300 + 50) + 'px', transform: 'rotate(' + (Math.random() * 120 - 60) + 'deg)'}">
+    :style="{fontSize: word.count + 'em', color: 'rgba(10, 30, 60, ' +  (word.count / maxCount) + ')', zIndex: word.count, left: (centeredRandom() * 600) + 'px', top: (centeredRandom() * 360) + 'px', transform: 'rotate(' + (Math.random() * 120 - 60) + 'deg)'}">
       {{ word.text }}
     </div>
   </div>
