@@ -31,7 +31,7 @@
         <div class="label">WC</div>
         <div id="elevator">EV</div>
       </div>
-      <div id="hall">A306<br>ダイワハウス<br>石橋信夫記念ホール</div>
+      <div id="hall"><div>A306</div><div>{{ hallName[lang] }}</div></div>
     </div>
   </div>
 </template>
@@ -45,7 +45,17 @@ export default {
     return {
       roomNames: ['A301', 'A302', 'A303', 'A304', 'A305'],
       rooms: [],
+      hallName: {
+        'ja': 'ダイワハウス石橋信夫記念ホール',
+        'en': 'Daiwa House Ishibashi Nobuo Memorial Hall'
+      },
       autoReload: null
+    }
+  },
+  props: ['contexts'],
+  computed: {
+    lang () {
+      return this.contexts.lang ? this.contexts.lang : 'ja'
     }
   },
   methods: {
@@ -172,6 +182,7 @@ $light-on: radial-gradient(ellipse closest-side at center, white, white 40%, rgb
 }
 #hall {
   @include flex-centering;
+  flex-flow: column;
   background: $light-off;
   position: absolute;
   bottom: 0%;
