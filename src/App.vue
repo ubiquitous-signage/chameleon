@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @click="onClicked">
     <header-component :contexts="contexts"></header-component>
     <transition name="fade" mode="out-in">
       <router-view :items="items" :contexts="contexts"></router-view>
@@ -21,6 +21,7 @@ export default {
       items: [],
       contexts: { 'lang': 'ja' },
       autoReload: null,
+      autoNavigation: null,
       pages: ['/', '/map', '/about'],
       // pages: ['/'],
       // pages: ['/map'],
@@ -45,6 +46,20 @@ export default {
       } catch (e) {
         console.log(e)
       }
+    },
+    nextPage: function () {
+      this.page_index = (this.page_index + 1) % this.pages.length
+      this.$router.replace(this.pages[this.page_index])
+    },
+    onClicked: function () {
+      clearInterval(this.autoNavigation)
+      this.nextPage()
+      this.autoNavigation = setInterval(
+      function () {
+        console.log('navigation')
+        this.nextPage()
+      }.bind(this),
+      20000)
     }
   },
   created () {
@@ -56,15 +71,15 @@ export default {
         this.fetchContexts()
       }.bind(this),
       1000)
-    setInterval(
+    this.autoNavigation = setInterval(
       function () {
-        this.page_index = (this.page_index + 1) % this.pages.length
-        this.$router.replace(this.pages[this.page_index])
+        this.nextPage()
       }.bind(this),
       20000)
   },
   destroyed () {
     clearInterval(this.autoReload)
+    clearInterval(this.autoNavigation)
   }
 }
 </script>
