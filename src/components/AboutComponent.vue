@@ -6,7 +6,7 @@
     <div class="paragraphs">
       <ul>
         <li>
-          <img src="../assets/about_en.png">
+          <img src="../assets/about_jp.png">
         </li>
       </ul>
     </div>
@@ -34,7 +34,7 @@ export default {
 .about h2 {
   font-size: 3.5rem;
   margin-top: 4.0rem;
-  margin-bottom: 7.0rem;
+  margin-bottom: 1.0rem;
 }
 
 img {
