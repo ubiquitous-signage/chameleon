@@ -61,7 +61,7 @@ export default {
         this.page_index = (this.page_index + 1) % this.pages.length
         this.$router.replace(this.pages[this.page_index])
       }.bind(this),
-      10000)
+      20000)
   },
   destroyed () {
     clearInterval(this.autoReload)
