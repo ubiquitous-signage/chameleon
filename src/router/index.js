@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import GeneralComponent from '@/components/GeneralComponent'
 import AboutComponent from '@/components/AboutComponent'
 import MapComponent from '@/components/MapComponent'
+import TitleComponent from '@/components/TitleComponent'
 
 Vue.use(Router)
 
@@ -24,6 +25,12 @@ export default new Router({
       path: '/map',
       name: 'MapComponent',
       component: MapComponent,
+      props: true
+    },
+    {
+      path: '/title',
+      name: 'TitleComponent',
+      component: TitleComponent,
       props: true
     }
   ]
