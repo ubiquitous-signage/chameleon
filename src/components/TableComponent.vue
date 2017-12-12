@@ -70,6 +70,7 @@ export default {
       tr {
         td {
           overflow: visible;
+          vertical-align: middle;
           div {
             overflow: visible;
             img {
