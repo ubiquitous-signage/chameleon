@@ -53,5 +53,6 @@ export default {
 .twitter {
   margin: 0;
   padding: 0;
+  pointer-events: none;
 }
 </style>

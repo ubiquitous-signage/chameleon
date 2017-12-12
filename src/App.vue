@@ -1,8 +1,8 @@
 <template>
   <div id="app" @click="onClicked">
     <header-component :contexts="contexts"></header-component>
-    <transition name="fade" mode="out-in">
-      <router-view :items="items" :contexts="contexts"></router-view>
+    <transition name="fade" mode="out-in"> 
+      <router-view :items="items" :contexts="contexts" id="main"></router-view>
     </transition>
   </div>
 </template>
@@ -107,6 +107,9 @@ body {
   color: #2c3e50;
   margin: 0%;
   padding: 0;
+}
+#main {
+  cursor: none;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s
