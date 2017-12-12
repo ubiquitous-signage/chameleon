@@ -14,10 +14,6 @@
 
 export default {
   name: 'WordCloud',
-  data () {
-    inDuration = 2000
-    outDuration = 1000
-  },
   methods: {
     centeredRandom: function () {
       return (Math.random() + Math.random()) / 2
