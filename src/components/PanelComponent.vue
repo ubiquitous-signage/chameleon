@@ -47,7 +47,8 @@ div.panel {
     text-align: left;
     font-weight: bold;
     font-size: 3.2rem;
-    height: 1.5em;
+    // height: 1.5em;
+    line-height: 1.2em;
     max-width: 100%;
     vertical-align: middle;
     margin: 0;
