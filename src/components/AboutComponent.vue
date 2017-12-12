@@ -37,6 +37,7 @@ export default {
   font-size: 3.5rem;
   padding-left: 5rem;
   padding-right: 5rem;
+  height: 1770px;
 }
 
 .about h2 {

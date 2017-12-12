@@ -22,7 +22,7 @@ export default {
       contexts: { 'lang': 'ja' },
       autoReload: null,
       autoNavigation: null,
-      pages: ['/', '/map', '/about', 'title'],
+      pages: ['/', '/ad', '/map', '/about', 'title'],
       // pages: ['/'],
       // pages: ['/map'],
       page_index: 0
@@ -107,6 +107,7 @@ body {
   color: #2c3e50;
   margin: 0%;
   padding: 0;
+  height: 100vh;
 }
 #main {
   cursor: none;

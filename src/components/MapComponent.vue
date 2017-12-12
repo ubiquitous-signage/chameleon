@@ -98,7 +98,7 @@ h2 {
   font-size: 3.5rem;
   padding-left: 5rem;
   padding-right: 5rem;
-  height: 1750px;
+  height: 1770px;
   text-align: center
 }
 

@@ -4,6 +4,7 @@ import GeneralComponent from '@/components/GeneralComponent'
 import AboutComponent from '@/components/AboutComponent'
 import MapComponent from '@/components/MapComponent'
 import TitleComponent from '@/components/TitleComponent'
+import AdComponent from '@/components/AdComponent'
 
 Vue.use(Router)
 
@@ -31,6 +32,12 @@ export default new Router({
       path: '/title',
       name: 'TitleComponent',
       component: TitleComponent,
+      props: true
+    },
+    {
+      path: '/ad',
+      name: 'AdComponent',
+      component: AdComponent,
       props: true
     }
   ]

@@ -52,7 +52,7 @@ div.panel {
     max-width: 100%;
     vertical-align: middle;
     margin: 0;
-    padding: 0 0 0 0.5em;
+    padding: 0.25em;
     // background-color: #FC0;
   }
 }
