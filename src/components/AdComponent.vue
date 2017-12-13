@@ -15,10 +15,6 @@
   </div>
 </template>
 
-<div class="flexContainer">
-    <ad-component class="ad" :items="adItems" :lang="contexts['lang']"></ad-component>
-</div>
-
 <script>
 import PanelComponent from './PanelComponent'
 
@@ -89,8 +85,7 @@ h2 {
   }
   .dummyPanel {
     flex-basis: 31.4%;
-    margin: 0;
-    padding: 0;
+    padding: 10px;
   }
 }
 </style>
