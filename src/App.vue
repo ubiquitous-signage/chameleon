@@ -1,5 +1,5 @@
 <template>
-  <div id="app" @click="onClicked">
+  <div id="app" @click.left="onClicked" @contextmenu.prevent="onRightClicked">
     <header-component :contexts="contexts"></header-component>
     <transition name="fade" mode="out-in"> 
       <router-view :items="items" :contexts="contexts" id="main"></router-view>
@@ -60,6 +60,18 @@ export default {
         this.nextPage()
       }.bind(this),
       20000)
+      console.log('left clicked')
+    },
+    onRightClicked: function () {
+      clearInterval(this.autoNavigation)
+      this.autoNavigation = setInterval(
+      function () {
+        console.log('navigation')
+        this.nextPage()
+      }.bind(this),
+      20000)
+      console.log('right clicked')
+      return false
     }
   },
   created () {
