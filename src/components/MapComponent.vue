@@ -40,7 +40,7 @@
 import axios from 'axios'
 
 export default {
-  name: 'map',
+  name: 'MapComponent',
   data () {
     return {
       title: {
